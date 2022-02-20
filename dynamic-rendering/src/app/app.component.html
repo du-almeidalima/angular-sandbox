@@ -1,0 +1,31 @@
+<main class="container">
+  <h1>Angular Dynamic Rendering</h1>
+
+  <p>
+    The objective of this project is to explore how to render dynamic content in
+    Angular as we can do with Render props or slots in React. This sandbox will
+    use the same Mouse example as in
+    <a
+      href="https://reactjs.org/docs/render-props.html"
+      target="_blank"
+      rel="nofollow"
+    >
+      React render props documentation
+    </a>
+  </p>
+
+  <section>
+    <h2>Using Template Ref and ng-container with *ngTemplateRef</h2>
+
+    <p>
+      The idea is, we provide the props to the rendered template using context from
+      ng-container
+    </p>
+
+    <app-template-ref-container>
+      <ng-template let-x="x" let-y="y">
+        <app-mouse [x]="x" [y]="y"></app-mouse>
+      </ng-template>
+    </app-template-ref-container>
+  </section>
+</main>
