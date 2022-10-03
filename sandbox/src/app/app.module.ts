@@ -7,6 +7,7 @@ import {FormsModule} from "@angular/forms";
 import {ChildComponent} from './child/child.component';
 import {DeepChildComponent} from './deep-child/deep-child.component';
 import {PaneComponent} from "./pane/pane.component";
+import {DragDropModule} from "@angular/cdk/drag-drop";
 
 @NgModule({
   declarations: [
@@ -15,11 +16,12 @@ import {PaneComponent} from "./pane/pane.component";
     ChildComponent,
     DeepChildComponent,
   ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    PaneComponent
-  ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        PaneComponent,
+        DragDropModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -19,21 +19,18 @@ export class Pane {
     <div>Selected: {{selectedPane}}</div>
   `,
 })
-export class PaneComponent implements AfterViewInit {
+export class PaneComponent {
   @ViewChild(Pane)
   set pane(v: Pane) {
-    if (v) {
+    setTimeout(() => {
       this.selectedPane = v.id;
-    }
+    }, 0);
   }
 
   selectedPane: string = '';
   shouldShow = true;
+
   toggle() {
     this.shouldShow = !this.shouldShow;
-  }
-
-  ngAfterViewInit(): void {
-    throw new Error('Method not implemented.');
   }
 }

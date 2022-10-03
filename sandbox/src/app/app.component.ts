@@ -17,6 +17,17 @@ import {Component, OnInit} from "@angular/core";
       <hr>
       <br>
       <pane-component></pane-component>
+      <br>
+      <hr>
+      <br>
+      <div style="background-color: hsl(0,0%,50%); width: 900px; height: 900px" id="dragBoudary">
+        <div style="background-color: orangered; width: 100px; height: 100px; cursor: grab;"
+             cdkDrag
+             cdkDragBoundary="#dragBoudary"
+        >
+          Drag Me
+        </div>
+      </div>
     </main>
   `,
   styles: [".container{  margin: auto; width: 80%; }"],
