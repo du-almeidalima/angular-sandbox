@@ -16,6 +16,7 @@ export class HideAfterDirective implements OnInit, OnDestroy {
   @Input("hideAfter")
   public delay = 1000;
 
+  // This must be prefixed the name of the directive in order for the value to be injected
   @Input("hideAfterHiddenTemplate")
   public hiddenTemplate: TemplateRef<any> | undefined;
 

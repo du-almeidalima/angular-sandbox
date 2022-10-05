@@ -2,45 +2,22 @@ import { Component, OnInit } from "@angular/core";
 
 @Component({
   selector: "app-root",
-  styles: [
-    `
-      .banner {
-        padding: 0.5rem 2rem;
-        border-radius: 1rem;
-        background-color: teal;
-      }
-
-      .banner h2 {
-        font-weight: bold;
-        font-family: arial;
-      }
-    `,
-  ],
   template: `
-    <h1>Structural Directives</h1>
-    <section
-      class="banner"
-      *hideAfter="5000; hiddenTemplate: displayWhenHidden"
-    >
-      <h2>Temporary Content</h2>
-      <p>This should disappear in 5 seconds</p>
-    </section>
-
-    <ng-template #displayWhenHidden> I'm gone! </ng-template>
-
+    <nav style="display: flex; gap: .5rem">
+      <button (click)="handleNavigation('BASIC')">Basic Implementation</button>
+      <button (click)="handleNavigation('CONTEXT')">With Context</button>
+    </nav>
     <hr />
-
-    <section *unless="someBoolean">
-      <h2>Unless Directive</h2>
-    </section>
+    <div [ngSwitch]="screen">
+      <app-basic-implementation *ngSwitchCase="'BASIC'"></app-basic-implementation>
+      <app-context-implementation *ngSwitchCase="'CONTEXT'"></app-context-implementation>
+    </div>
   `,
 })
-export class AppComponent implements OnInit {
-  public someBoolean = true;
+export class AppComponent {
+  public screen: "BASIC" | "CONTEXT" = "BASIC";
 
-  ngOnInit(): void {
-    setTimeout(() => {
-      this.someBoolean = false;
-    }, 2000);
+  handleNavigation(screen: typeof this.screen) {
+    this.screen = screen;
   }
 }

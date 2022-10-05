@@ -1,20 +1,24 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
 
-import { AppComponent } from './app.component';
-import { HideAfterDirective } from './hide-after.directive';
-import { UnlessDirective } from './unless.directive';
+import { AppComponent } from "./app.component";
+import { HideAfterDirective } from "./directives/hide-after.directive";
+import { UnlessDirective } from "./directives/unless.directive";
+import { BasicImplementationComponent } from "./basic-implementation/basic-implementation.component";
+import { ContextImplementationComponent } from "./context-implementation/context-implementation.component";
+import { ContextHideAfterDirective } from "./directives/context-hide-after.directive";
 
 @NgModule({
   declarations: [
     AppComponent,
+    UnlessDirective,
+    BasicImplementationComponent,
+    ContextImplementationComponent,
     HideAfterDirective,
-    UnlessDirective
+    ContextHideAfterDirective,
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
