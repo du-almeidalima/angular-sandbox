@@ -1,1 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
+/* Write a simple css reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::after,
+::before {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #CECECE;
+}
+
+.container {
+  --primary: #2c8bcc;
+  --secondary: #E96D63;
+
+  margin: min(15vh, 3rem) auto;
+  width: clamp(30rem, 50vw, 80vw);
+  background-color: white;
+}
+
+.navigation {
+  background-color: var(--secondary);
+}
+
+.navigation ul {
+  display: flex;
+  gap: 1rem;
+}
+
+.navigation ul li {
+  padding: 1rem 2rem;
+  list-style: none;
+
+}
+
+.navigation ul li a {
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 1.6rem;
+  text-decoration: none;
+}
+
+.navigation ul li a.active {
+  color: var(--secondary);
+  filter: brightness(200%);
+}
