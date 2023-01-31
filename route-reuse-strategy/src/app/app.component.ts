@@ -6,7 +6,7 @@ import {Component} from '@angular/core';
     <div class="container">
       <nav class="navigation">
         <ul>
-          <li *ngFor="let tab of tabs"><a [routerLink]="tab.id" routerLinkActive="active">{{tab.label}}</a></li>
+          <li *ngFor="let tab of tabs"><a [routerLink]="'products/' + tab.id" routerLinkActive="active">{{tab.label}}</a></li>
         </ul>
       </nav>
       <main class="content">
