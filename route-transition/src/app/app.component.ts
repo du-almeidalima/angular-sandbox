@@ -21,6 +21,9 @@ import {fader} from "./pages/route-animations";
       </div>
   `,
   styles: [`
+    .content {
+      position: relative;
+    }
     .container {
       --primary: #2c8bcc;
       --secondary: #E96D63;
