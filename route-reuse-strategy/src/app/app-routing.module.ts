@@ -1,10 +1,8 @@
 import {NgModule} from '@angular/core';
-import {RouteReuseStrategy, RouterModule, Routes} from '@angular/router';
-import {TabDetailsComponent} from "./tab-details/tab-details.component";
-import {TabRouteReuseStrategy} from "../tab-route-reuse-strategy";
+import {RouterModule, Routes} from '@angular/router';
 
 const routes: Routes = [
-  {path: 'products/:id', component: TabDetailsComponent}
+  {path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule)}
 ];
 
 @NgModule({

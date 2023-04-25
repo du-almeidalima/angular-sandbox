@@ -4,14 +4,9 @@ import {Component} from '@angular/core';
   selector: 'app-root',
   template: `
     <div class="container">
-      <nav class="navigation">
-        <ul>
-          <li *ngFor="let tab of tabs"><a [routerLink]="'products/' + tab.id" routerLinkActive="active">{{tab.label}}</a></li>
-        </ul>
-      </nav>
-      <main class="content">
-        <router-outlet/>
-      </main>
+      <h2>Route Reuse Strategy</h2>
+      <a routerLink="products">Products</a>
+      <router-outlet/>
     </div>
   `,
 })
